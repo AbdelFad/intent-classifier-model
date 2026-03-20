@@ -1,4 +1,6 @@
-# Intent Classifier Model
+# Model Deployment and Model Serving
+
+## Intent Classifier Model
 
 This small project demonstrates:
 
@@ -6,7 +8,7 @@ Training a tiny text classifier.
 Saving the model artifact.
 Serving predictions via a Flask API (/predict).
 
-## Quick start (local)
+### Quick start (local)
 
 1. Create a virtualenv and install: 
 
@@ -44,4 +46,28 @@ curl -X POST http://127.0.0.1:6000/predict -H "Content-Type: application/json" -
 }
 ```
 
+====
+# Model Deployment and Model Serving using Virtual Machines
 
+- VPC: Virtual 
+
+- WSGI: Web server Gateway Interface
+
+- ASG : Dynamic scaling --> 
+
+- LB: LoadBalancer --> TG --> ASG
+
+
+## Architecture:
+
+Internet (client) --> IGW(Internet Gateway) attached to VPC ==>
+
+==> App Load Balancer (ALB) --> internet-facing (Listener: HTTP 80) ==>
+
+==> Target Group (HTTP:80, Health-check:/predict) ==>
+
+==> Auto Scaling Group (ASG) ==>
+
+==> EC2 Instance or GCE (in a Public Subnet) --> Nginx (listen:80) -->Proxy_pass-->Gunicorn(127.0.0.1:6000)-->WSGI app(/predict)
+
+## Note go to git branch virtual-machine
