@@ -38,7 +38,10 @@ curl -X POST http://127.0.0.1:6000/predict -H "Content-Type: application/json" -
 
 #Response: 
 
-{ "intent": "complaint", "probabilities": {"complaint": 0.85, "question": 0.05, ...} }
+{ 
+  "intent": "complaint", 
+  "probabilities": {"complaint": 0.85, "question": 0.05, ...} 
+}
 ```
 
 
