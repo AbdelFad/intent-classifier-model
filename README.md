@@ -70,4 +70,12 @@ Internet (client) --> IGW(Internet Gateway) attached to VPC ==>
 
 ==> EC2 Instance or GCE (in a Public Subnet) --> Nginx (listen:80) -->Proxy_pass-->Gunicorn(127.0.0.1:6000)-->WSGI app(/predict)
 
-## Note go to git branch virtual-machine
+## Note go to git branch virtual-machines
+
+
+
+
+
+
+
+
